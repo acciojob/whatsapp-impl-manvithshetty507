@@ -54,13 +54,14 @@ public class WhatsappController {
 
     @PutMapping("/send-message")
     public int sendMessage(Message message, User sender, Group group) throws Exception{
-        //Throw "Group does not exist" if the mentioned group does not exist
-        //Throw "You are not allowed to send message" if the sender is not a member of the group
-        //If the message is sent successfully, return the final number of messages in that group.
+        //Throw "Group does not exist"fully, return the final number of messages in that group.
 
         return whatsappService.sendMessage(message, sender, group);
     }
     @PutMapping("/change-admin")
+    //if the mentioned group does not exist
+    //Throw "You are not allowed to send message" if the sender is not a member of the group
+    //If the message is sent success
     public String changeAdmin(User approver, User user, Group group) throws Exception{
         //Throw "Group does not exist" if the mentioned group does not exist
         //Throw "Approver does not have rights" if the approver is not the current admin of the group
